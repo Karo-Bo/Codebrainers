@@ -28,3 +28,25 @@ else:
     print("Dziwna sytuacja :P")
 
 # print("Po ifie")
+
+# (Nie)jawna konwersja do typu logicznego
+lista = []
+if lista: # if not lista:
+    pass
+# pass jest pustą instrukcją -> przejdź dalej
+
+# sprawdzam jawną konwersję na typ logiczny
+print(bool(lista))
+
+print(bool(0.0))
+print(bool(-0.000001))
+
+print(bool(0))
+print(bool(-1))
+
+bool(None)
+
+# Operatory logiczne
+# not
+# and
+# or
