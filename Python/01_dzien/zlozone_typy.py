@@ -1,3 +1,5 @@
+# Stringi 
+
 # Lista
 
 # Przykłady łamania linii
