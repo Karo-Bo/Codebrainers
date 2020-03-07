@@ -1,0 +1,275 @@
+.navi-bar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    transition: 1.2s all;
+    // transition: min-height 2s all;
+    // transition: max-height 2s all;
+    //zmiana koloru w menu przy scroll down
+    min-height: 70px;
+    max-height: 100px;
+    height: auto;
+
+    &.active {
+        background-color: $primary-color;
+
+        .container {
+            padding: 15px;
+
+            .logo {
+                img {
+                    &.logo-white {
+                        display: none;
+                    }
+
+                    &.logo-black {
+                        display: block;
+                    }
+                }
+            }
+
+            .menu {
+                li {
+                    a {
+                        color: $secondary-color;
+                    }
+                }
+            }
+
+            .hamburger {
+                border-color: $secondary-color;
+
+                div {
+                    background-color: $secondary-color;
+                }
+            }
+        }
+
+    }
+
+    .container {
+        display: flex;
+        // flex-direction: row; - domyślnie
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 15px;
+        transition: 1s all;
+        //zmniejszenie się paska menu przy klasie .active
+
+        .hamburger {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: 1px solid $primary-color;
+            border-radius: 6px;
+            padding: 0;
+            cursor: pointer;
+            display: none;
+
+            @media (max-width: 900px) {
+                display: block;
+            }
+
+            &.open {
+                div {
+                    width: 26px;
+
+                    &:nth-of-type(2) {
+                        display: none;
+                    }
+
+                    &:nth-of-type(1) {
+                        transform: rotate(45deg);
+                        top: 17px;
+                        left: 6px;
+                    }
+
+                    &:nth-of-type(3) {
+                        transform: rotate(-45deg);
+                        bottom: 18px;
+                        left: 6px;
+                    }
+                }
+            }
+
+            div {
+                width: 22px;
+                height: 3px;
+                background-color: $primary-color;
+                position: absolute;
+                border-radius: 1.5px;
+
+                &:nth-of-type(3) {
+                    left: 8px;
+                    bottom: 9px;
+                }
+
+                &:nth-of-type(2) {
+                    left: 8px;
+                    top: 17.5px;
+                }
+
+                &:nth-of-type(1) {
+                    left: 8px;
+                    top: 9px;
+                }
+            }
+        }
+
+        .logo {
+            img {
+                width: 110px;
+                z-index: 3001;
+
+                &.logo-black {
+                    display: none;
+                }
+            }
+        }
+
+        .menu {
+
+            @media (max-width: 900px) {
+                display: none;
+                // dla szerokości min 900px trzeba zresetować menu-open
+            }
+
+            li {
+                display: inline-block;
+                margin-left: 60px;
+
+                &:first-child {
+                    margin: 0;
+                }
+
+                a {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+//
+// Menu-open
+//
+body.menu-open {
+
+    .navi-bar {
+        // height: 100vh;
+
+        min-height: 730px;
+        max-height: 730px;
+        min-width: 100%;
+        background-color: #ffffff;
+
+
+        .hamburger {
+            @media (min-width: 901px) {
+                display: block;
+            }
+
+            // pokazuje dalej krzyżyk przy rozwiniętym menu, mimo powiększenia ekranu
+        }
+
+        .menu {
+            // display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            // left: 0;
+            width: 100vw;
+            height: 100vh;
+            // padding: 75px 0;
+
+            li {
+                display: block;
+                position: relative;
+                // display: flex;
+                // flex-direction: column;
+                // align-items: center;
+                // justify-content: space-around;
+                // margin: 0;
+                margin: 0 0 30px;
+                opacity: 0;
+
+                // ***************************
+                animation: fadeInRight .5s ease forwards;
+                animation-delay: .35s !important;
+
+                &:nth-of-type(2) {
+                    animation-delay: .4s !important;
+                }
+
+                &:nth-of-type(3) {
+                    animation-delay: .45s !important;
+                }
+
+                &:nth-of-type(4) {
+                    animation-delay: .5s !important;
+                }
+
+                &:nth-of-type(5) {
+                    animation-delay: .55s !important;
+                }
+
+                &:nth-of-type(6) {
+                    animation-delay: .6s !important;
+                }
+
+                // ********************************
+
+                &:last-child {
+                    margin: 0;
+                }
+
+                &:first-child {
+                    margin: 0 0 30px;
+                }
+
+                a {
+                    font-size: x-large;
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        .logo {
+            img {
+                &.logo-black {
+                    display: block;
+                }
+
+                &.logo-white {
+                    display: none;
+                }
+            }
+        }
+
+        .hamburger {
+            border-color: $secondary-color;
+
+            div {
+                background-color: $secondary-color;
+            }
+        }
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
