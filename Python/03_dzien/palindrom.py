@@ -5,11 +5,14 @@
 # A to kanapa pana kota
 # Czy dane wyrażenie jest palindromem
 
-yourPhrase = input("Wpisz wyrażenie: ")
+word = input("Wpisz wyrażenie: ")
 
-yourPhraseLower = yourPhrase.lower()
-noSpace = yourPhraseLower.replace(" ", "")
-word = noSpace.replace("\t", "")
+word = word.lower()
+word = word.replace(" ", "")
+word = word.replace("\t", "")
+
+# word = input("Wpisz wyrażenie: ").lower().replace(" ", "").replace("\t", "")
+
 # slowo = slowo.replace("\n", "") 
 # slowo = slowo.replace("\r", "")
 # Czy da się pozbyć wszystkich białych znaków na raz?
@@ -19,8 +22,13 @@ palindrome = True
 for i in range(len(word) // 2):
     if word[i] != word[-i - 1]:
         palindrome = False
+        break # jeśli if spełniony, nie wykonuje już dalej pętli
     
-if palindrome == True:
+if palindrome:
     print("To jest palindrom")
 else:
     print("To nie jest palindrom")
+
+# print(f"{=palindrome}") 
+# wyświetla nazwę zmiennej i jej wartość
+# palindrome = True
