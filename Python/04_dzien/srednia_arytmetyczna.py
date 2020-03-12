@@ -7,4 +7,4 @@ for i in lista:
     suma += i
     liczba_el += 1
 
-print(suma / liczba_el)
+print("Wynik to:", suma / liczba_el)
