@@ -7,7 +7,7 @@ number = random.randint(1, 100)
 i = 0
 success = False
 
-while (i < 7) and (success == False):
+while (i < 7) and not success:
  
     user_number = int(input("Podaj liczbę: "))
     i += 1
@@ -18,13 +18,12 @@ while (i < 7) and (success == False):
 
     elif user_number > number:
         print("Szukana liczba jest mniejsza")
-        right_range = user_number - 1
-        
+                
     else:
         print("Szukana liczba jest większa")
-        left_range = user_number + 1
-
-if success == False:
+        
+# if success == False:
+if not success:
     print("Nie zgadłoś!! :P") 
 
 # ***************************
