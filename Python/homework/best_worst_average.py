@@ -1,21 +1,11 @@
 import csv
 
 data = []
-# mamy listę, do której będziemy kolejno dodawać
-# na koniec słowniki - każdy słownik to trzy pary 
-# klucz : wartość, odpowiadające jednej linijce
-# z pliku csv.
 
-# otwarcie pliku
 with open("przykladowy.csv", "r") as f:
-    # DictReader pozwoli odczytywać dane z pliku CSV
-    # i będzie je zwracał jako słowniki
-    reader = csv.DictReader(f)
 
-    # iterujemy po readerze
+    reader = csv.DictReader(f)
     for row in reader:
-        # dokonujemy konwersji danych i dokładamy je na
-        # koniec naszej listy
 
         data.append(
             {
@@ -26,7 +16,8 @@ with open("przykladowy.csv", "r") as f:
         )
 
 # wypisać najgorszą ocenę filmu
-# wypisać tytuły najgorzej ocenianych filmóww
+# wypisać tytuły najgorzej ocenianych filmów
+
 worst_title = []
 worst_score = data[0]["score"]
 for entry in data:
@@ -37,13 +28,11 @@ for entry in data:
     if entry["score"] == worst_score:
         worst_title.append(entry["title"])
 
-# a.join robi nowego stringa, 
-# w którym wstawia a pomiędzy elementy listy podanej jako argument 
-
 print(f"Najgorsza ocena filmu z RdN to: {worst_score}")
 print(f"Najgorzej ocenione filmy z RdN to: " + ", ".join(worst_title))      
 print()
 
+# najlepsza ocena filmów z RdN
 # tytuły najlepszych filmów z RdN
 
 best_title = []
@@ -57,7 +46,8 @@ for entry in data:
         best_title.append(entry["title"])
 
 print(f"Najlepsza ocena filmu z RdN to: {best_score}")
-print(f"Najlepiej ocenione filmy z RdN to: " + ", ".join(best_title))      
+print("Najlepiej ocenione filmy z RdN to: " + ", ".join(best_title))  
+print()    
 
 # Znajdź średnią ocen filmów RdN
 
@@ -67,8 +57,3 @@ for entry in data:
     sum_score += entry["score"]
 
 print(round(sum_score / len(data)))
-
-
-
-
-
