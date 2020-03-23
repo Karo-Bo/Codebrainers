@@ -1,6 +1,7 @@
 # Znajdź rok, w którym RdN wydał najwięcej filmów
 
 import csv
+from collections import Counter
 
 data = []
 
@@ -17,15 +18,26 @@ with open("przykladowy.csv", "r") as f:
             }
         )
 
-years = {}
+years = Counter()
 
 for entry in data:
-    if entry["year"] not in years.keys():
+    years[entry["year"]] += 1
 
-        years[entry["year"]] = 1
+# print(years)
 
-    else:
-        years[entry["year"]] += 1
+# *************************************
+
+# years = {}
+
+# for entry in data:
+    # if entry["year"] in years:
+
+    #     years[entry["year"]] += 1
+        
+    # else:
+    #     years[entry["year"]] = 1
+
+# *************************************
 
 films_number = 0
 max_years = []

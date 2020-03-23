@@ -19,7 +19,7 @@ if n % 2 != 0:
     median = scores[((n + 1) // 2) - 1]
 
 else:
-    median = scores[((n // 2 + (n // 2 + 1)) // 2) - 1]
+    median = (scores[(n // 2 - 1)] + scores[(n // 2 )]) // 2
 
 print(median)
     
