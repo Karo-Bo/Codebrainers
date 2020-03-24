@@ -1,0 +1,65 @@
+.home {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 400px;
+    // dlaczego nie działa wyrównanie do prawej i poniższy wzór??
+    width: calc(100vw - 400px);
+    min-height: 100vh;
+    background-image: url("../img/home.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        position: relative;
+        z-index: 2;
+
+        .profile-photo {
+            img {
+                display: block;
+                height: 220px;
+                width: 220px;
+                border-radius: 50%;
+                border: 9px solid #3B4F5E;
+            }
+        }
+
+        h2 {
+            // color: $primary-color;
+            font-size: 45px;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 20px 0;
+            margin: 0;
+
+            span {
+                color: #ff4b36;
+            }
+        }
+
+        p {
+            font-size: 19px;
+            font-family: 'Roboto';
+            margin: 0;
+        }
+    }
+
+}
