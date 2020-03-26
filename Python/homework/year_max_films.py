@@ -18,6 +18,8 @@ with open("przykladowy.csv", "r") as f:
             }
         )
 
+# print(data)
+
 # *************************************
 
 years = Counter()
@@ -25,15 +27,16 @@ years = Counter()
 for entry in data:    
     years[entry["year"]] += 1
 
-# print(years)
-
 # *************************************
 
 max_years = []
+best_year = years.most_common()[0][1]
 
-for y in years:
-    if years[y] == years.most_common(1)[0][1]:
-        max_years.append(str(y))
+for year, number in years.most_common():
+    if number == best_year:
+        max_years.append(str(year))
+    else:
+        break
 
 print("Najwięcej filmów RdN wydał w latach: " + ", ".join(max_years))
 
