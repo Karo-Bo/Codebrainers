@@ -386,7 +386,6 @@ nav {
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.09);
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.09);
   z-index: 2;
-  overflow: scroll;
 }
 
 @media (max-width: 1040px) {
@@ -405,7 +404,7 @@ nav {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    min-height: 80px !important;
+    height: 80px !important;
     width: 100vw;
     padding: 0 60px;
     top: 0;

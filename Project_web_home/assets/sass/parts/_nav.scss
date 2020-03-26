@@ -9,7 +9,6 @@ nav {
     width: 400px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.09);
     z-index: 2;
-    overflow: scroll;
 
     @media (max-width: 1040px) {
         position: fixed;
@@ -17,7 +16,7 @@ nav {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        min-height: 80px !important;
+        height: 80px !important;
         width: 100vw;
         padding: 0 60px;
         top: 0;
