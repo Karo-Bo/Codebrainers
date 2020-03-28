@@ -1,34 +1,32 @@
 def hexcolor(r, g, b):
 
-    if 0 <= r <= 9:
-        red = "0" + str(r)
-    elif 9 < r < 16:
-        red = "0" + format(r, 'X')
-    else:
-        red = format(r, 'X')
-
-    if 0 <= g <= 9:
-        green = "0" + str(g)
-    elif 9 < g < 16:
-        green = "0" + format(g, 'X')
-    else:
-        green = format(g, 'X')
-
-    if 0 <= b <= 9:
-        blue = "0" + str(b)
-    elif 9 < b < 16:
-        blue = "0" + format(b, 'X')
-    else:
-        blue = format(b, 'X')
-    
+    red = '{:02X}'.format(r)    
+    green = '{:02X}'.format(g)
+    blue = '{:02X}'.format(b)
+        
     return "#" + red + green + blue
+
+def validate(x):
+
+    if (0 <= x <= 255):
+        return True
+    else:
+        return False    
 
 print("Podaj kolejne składowe koloru: ")
 r = int(input("Podaj wartość składowej red: "))
 g = int(input("Podaj wartość składowej green: "))
 b = int(input("Podaj wartość składowej blue: "))
 
-print("Kolor Hex dla tych składowych ma wartość: " + hexcolor(r, g, b))
+is_value_correct = True
+
+for x in (r, g, b):
+    if not (0 <= x <= 255):
+        is_value_correct = False
+        print(f"Podana składowa {x} jest niepoprawna")        
+
+if is_value_correct == True:
+    print("Kolor Hex dla tych składowych ma wartość: " + hexcolor(r, g, b))
 
 def test_hexcolor():
     
