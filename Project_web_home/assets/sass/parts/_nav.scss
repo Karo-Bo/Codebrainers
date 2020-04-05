@@ -8,7 +8,7 @@ nav {
     height: 100vh;
     width: 400px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.09);
-    z-index: 2;
+    z-index: 1;
     transition: 1s all;
 
     @media (max-width: 1040px) {
@@ -201,7 +201,7 @@ header {
         top: 0;
         left: 0;
         // background-color: rgba(#1f3250, 0);
-        z-index: 2;
+        z-index: 1;
     }
 
     .logo-box {
@@ -212,6 +212,10 @@ header {
             .photo_of_me {
                 display: block;
                 max-height: 60px;
+
+                @media (min-width: 1041px) {
+                    display: none;
+                }
             }
         }
     }
@@ -227,6 +231,13 @@ header {
         padding: 0;
         cursor: pointer;
         display: none;
+        z-index: 2;
+
+
+        @media (max-width: 1040px) {
+            display: block;
+
+        }
 
         div {
             width: 22px;
@@ -251,11 +262,8 @@ header {
             }
         }
 
-        @media (max-width: 1040px) {
-            display: block;
-        }
-
         &.open {
+
             div {
                 width: 26px;
 

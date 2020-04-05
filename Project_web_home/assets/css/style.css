@@ -367,6 +367,25 @@ ul {
   margin: 0 auto;
 }
 
+section {
+  position: relative;
+  top: 0;
+  right: 0;
+  margin: 0 0 0 400px;
+  min-height: 100vh;
+  z-index: 0;
+  color: #143b5a;
+}
+
+@media (max-width: 1040px) {
+  section {
+    position: relative;
+    top: 0;
+    margin: 0;
+    width: 100vw;
+  }
+}
+
 nav {
   position: fixed;
   display: -webkit-box;
@@ -385,7 +404,7 @@ nav {
   width: 400px;
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.09);
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.09);
-  z-index: 2;
+  z-index: 1;
   -webkit-transition: 1s all;
   transition: 1s all;
 }
@@ -558,7 +577,7 @@ header {
     padding: 0 60px;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1;
   }
 }
 
@@ -571,6 +590,12 @@ header .logo-box .logo .photo_of_me {
   max-height: 60px;
 }
 
+@media (min-width: 1041px) {
+  header .logo-box .logo .photo_of_me {
+    display: none;
+  }
+}
+
 header .hamburger {
   position: relative;
   width: 40px;
@@ -581,6 +606,13 @@ header .hamburger {
   padding: 0;
   cursor: pointer;
   display: none;
+  z-index: 2;
+}
+
+@media (max-width: 1040px) {
+  header .hamburger {
+    display: block;
+  }
 }
 
 header .hamburger div {
@@ -604,12 +636,6 @@ header .hamburger div:nth-of-type(2) {
 header .hamburger div:nth-of-type(1) {
   left: 8px;
   top: 9px;
-}
-
-@media (max-width: 1040px) {
-  header .hamburger {
-    display: block;
-  }
 }
 
 header .hamburger.open div {
@@ -654,27 +680,12 @@ body.nav-hidden section {
 }
 
 .home {
-  position: relative;
-  top: 0;
-  right: 0;
-  margin: 0 0 0 400px;
-  min-height: 100vh;
   background-image: url("../img/home.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  overflow: hidden;
   -webkit-transition: 1s all;
   transition: 1s all;
-}
-
-@media (max-width: 1040px) {
-  .home {
-    position: relative;
-    top: 0;
-    margin: 0;
-    width: 100vw;
-  }
 }
 
 .home:after {
@@ -686,7 +697,7 @@ body.nav-hidden section {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 0;
 }
 
 .home .container {
@@ -705,7 +716,7 @@ body.nav-hidden section {
           align-items: center;
   min-height: 100vh;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .home .container .profile-photo img {
@@ -749,5 +760,26 @@ body.nav-hidden section {
   font-size: 19px;
   font-family: 'Roboto';
   margin: 0;
+}
+
+.about {
+  height: 100vh;
+  padding: 120px 0;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
+
+.about .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 -30px !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about .container div {
+  padding: 0 30px;
 }
 /*# sourceMappingURL=style.css.map */

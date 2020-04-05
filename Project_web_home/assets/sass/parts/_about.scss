@@ -1,0 +1,19 @@
+.about {
+    height: 100vh;
+    padding: 120px 0;
+    transition: 1s all;
+
+    .container {
+        display: flex;
+        padding: 0 -30px !important;
+        align-items: center;
+
+
+
+        div {
+
+            padding: 0 30px;
+        }
+
+    }
+}
