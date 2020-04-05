@@ -14,33 +14,33 @@ def remove_zeros(given_list):
 
 def sort_desc(given_list):
 
-    sorted_list = []
+    # sorted_list = []
     
-    for i in range(0, len(given_list)):
-        for element in given_list:
-            if element == max(given_list):
-                sorted_list.append(element)
-                given_list.remove(element)  
+    # for i in range(0, len(given_list)):
+    #     for element in given_list:
+    #         if element == max(given_list):
+    #             sorted_list.append(element)
+    #             given_list.remove(element)  
 
-    return sorted_list
+    return sorted(given_list, key=None, reverse=True)
 
 # funkcja sprawdzająca czy iilość elementów jest mniejsza od danej wartości
+# zwraca wartość logiczną danego wyrażenia
 
 def length_check(n, given_list):
 
-    if n > len(given_list):
-        return True
-    else:
-        return False
+    return n > len(given_list)
 
 # funkcja odejmująca 1 od pierwszych n-elementów listy
 
 def substract_one_for_n_elements(n, given_list):
 
-    for i in range(0, n):
-        given_list[i] -= 1
+    minus_one_list = given_list[:]
 
-    return given_list
+    for i in range(0, n):
+        minus_one_list[i] -= 1
+
+    return minus_one_list
 
 # wielki finał i kompletny algorytm Havel-Hakimi.
 # This algorithm will return true if the answers are consistent 
