@@ -1,19 +1,145 @@
 .about {
     height: 100vh;
-    padding: 120px 0;
+    padding: 150px 0;
     transition: 1s all;
 
     .container {
         display: flex;
-        padding: 0 -30px !important;
         align-items: center;
 
+        .portrait-photo {
+            width: 35%;
+            padding: 0 15px;
+            overflow: hidden;
 
+            // @media (max-width: 1040px) {
+            //     width: 45%;
+            // }
 
-        div {
+            img {
+                display: block;
+                width: 100%;
 
-            padding: 0 30px;
+            }
         }
 
+        .about-box {
+            width: 65%;
+            margin: 0 0 0 50px;
+
+            // @media (max-width: 1040px) {
+            //     width: 55%;
+            // }
+
+
+            h4 {
+                font-family: $menu-header-font;
+                margin-bottom: 30px;
+                font-size: 25px;
+                font-weight: 600;
+                line-height: 1.2;
+
+                span {
+                    color: $strong-color;
+                }
+            }
+
+            p {
+                font-size: 16px;
+                letter-spacing: 1px;
+                line-height: 2;
+                color: $light-color;
+
+                span {
+                    color: $strong-color;
+                    // font-style: italic;
+                }
+            }
+
+            .personal-data {
+                display: flex;
+
+                .personal-details {
+                    display: block;
+                    width: 50%;
+
+                    li {
+                        line-height: 2em;
+
+                        div {
+                            display: inline-block;
+                            margin: 0 0 10px;
+
+                            &.data-type {
+                                font-size: 16px;
+                                font-weight: 600;
+                                color: #000;
+                                min-width: 85px;
+                                margin-right: 10px;
+                            }
+
+                            &.data-content {
+                                font-size: 16px;
+                                color: $light-color;
+
+                                a {
+                                    color: $strong-color;
+                                }
+                            }
+                        }
+
+
+                    }
+
+                }
+            }
+
+            .interests {
+                width: 100%;
+
+                p {
+                    span {
+                        color: #000;
+                        font-weight: 600;
+                        // min-width: 85px;
+                    }
+
+                    margin: 0 0 15px;
+                    line-height: 2em;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $light-color;
+
+                    a {
+                        color: $strong-color;
+                    }
+                }
+            }
+
+            .buttons {
+
+                li {
+                    display: inline-block;
+                    margin: 0 0 0 15px;
+
+                    &:first-child {
+                        margin: 0;
+                    }
+
+                    button {
+
+                        cursor: pointer;
+                        padding: 8px 30px;
+                        background-color: $strong-color;
+                        color: $primary-color;
+                        border: none;
+                        outline: none;
+                        line-height: 2em;
+                        font-family: $menu-header-font;
+                    }
+
+                }
+            }
+        }
     }
 }

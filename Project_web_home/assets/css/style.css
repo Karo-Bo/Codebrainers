@@ -764,7 +764,7 @@ body.nav-hidden section {
 
 .about {
   height: 100vh;
-  padding: 120px 0;
+  padding: 150px 0;
   -webkit-transition: 1s all;
   transition: 1s all;
 }
@@ -773,13 +773,125 @@ body.nav-hidden section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 -30px !important;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.about .container div {
-  padding: 0 30px;
+.about .container .portrait-photo {
+  width: 35%;
+  padding: 0 15px;
+  overflow: hidden;
+}
+
+.about .container .portrait-photo img {
+  display: block;
+  width: 100%;
+}
+
+.about .container .about-box {
+  width: 65%;
+  margin: 0 0 0 50px;
+}
+
+.about .container .about-box h4 {
+  font-family: "Raleway";
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.about .container .about-box h4 span {
+  color: #ff4b36;
+}
+
+.about .container .about-box p {
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 2;
+  color: #6f6f6f;
+}
+
+.about .container .about-box p span {
+  color: #ff4b36;
+}
+
+.about .container .about-box .personal-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about .container .about-box .personal-data .personal-details {
+  display: block;
+  width: 50%;
+}
+
+.about .container .about-box .personal-data .personal-details li {
+  line-height: 2em;
+}
+
+.about .container .about-box .personal-data .personal-details li div {
+  display: inline-block;
+  margin: 0 0 10px;
+}
+
+.about .container .about-box .personal-data .personal-details li div.data-type {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  min-width: 85px;
+  margin-right: 10px;
+}
+
+.about .container .about-box .personal-data .personal-details li div.data-content {
+  font-size: 16px;
+  color: #6f6f6f;
+}
+
+.about .container .about-box .personal-data .personal-details li div.data-content a {
+  color: #ff4b36;
+}
+
+.about .container .about-box .interests {
+  width: 100%;
+}
+
+.about .container .about-box .interests p {
+  margin: 0 0 15px;
+  line-height: 2em;
+  font-size: 16px;
+  font-weight: 400;
+  color: #6f6f6f;
+}
+
+.about .container .about-box .interests p span {
+  color: #000;
+  font-weight: 600;
+}
+
+.about .container .about-box .interests p a {
+  color: #ff4b36;
+}
+
+.about .container .about-box .buttons li {
+  display: inline-block;
+  margin: 0 0 0 15px;
+}
+
+.about .container .about-box .buttons li:first-child {
+  margin: 0;
+}
+
+.about .container .about-box .buttons li button {
+  cursor: pointer;
+  padding: 8px 30px;
+  background-color: #ff4b36;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  line-height: 2em;
+  font-family: "Raleway";
 }
 /*# sourceMappingURL=style.css.map */
