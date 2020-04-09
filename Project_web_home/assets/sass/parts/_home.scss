@@ -51,7 +51,7 @@
         }
 
         h2 {
-            // color: $primary-color;
+            color: $primary-color;
             text-align: center;
             font-size: 45px;
             text-transform: uppercase;
@@ -61,11 +61,12 @@
             @include fluid-type(320px, 1170px, 25px, 45px);
 
             span {
-                color: #ff4b36;
+                color: $strong-color;
             }
         }
 
         p {
+            color: $primary-color;
             font-size: 19px;
             font-family: 'Roboto';
             margin: 0;

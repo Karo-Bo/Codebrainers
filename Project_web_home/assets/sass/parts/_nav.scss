@@ -24,6 +24,8 @@ nav {
 
             .photo_of_me {
                 display: block;
+                height: 100px;
+
 
                 @media (max-width: 1040px) {
                     display: none;

@@ -426,6 +426,7 @@ nav .logo-box .logo {
 
 nav .logo-box .logo .photo_of_me {
   display: block;
+  height: 100px;
 }
 
 @media (max-width: 1040px) {
@@ -728,6 +729,7 @@ body.nav-hidden section {
 }
 
 .home .container h2 {
+  color: #ffffff;
   text-align: center;
   font-size: 45px;
   text-transform: uppercase;
@@ -757,14 +759,14 @@ body.nav-hidden section {
 }
 
 .home .container p {
+  color: #ffffff;
   font-size: 19px;
   font-family: 'Roboto';
   margin: 0;
 }
 
 .about {
-  height: 100vh;
-  padding: 150px 0;
+  padding: 150px 0 120px;
   -webkit-transition: 1s all;
   transition: 1s all;
 }
@@ -778,20 +780,63 @@ body.nav-hidden section {
           align-items: center;
 }
 
+@media (max-width: 860px) {
+  .about .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .about .container .portrait-photo {
-  width: 35%;
-  padding: 0 15px;
+  width: 40%;
+  padding: 0 20px;
   overflow: hidden;
+}
+
+@media (max-width: 1040px) {
+  .about .container .portrait-photo {
+    width: 45%;
+  }
+}
+
+@media (max-width: 860px) {
+  .about .container .portrait-photo {
+    width: 80%;
+  }
 }
 
 .about .container .portrait-photo img {
   display: block;
   width: 100%;
+  border: 9px solid #000000;
 }
 
 .about .container .about-box {
-  width: 65%;
-  margin: 0 0 0 50px;
+  width: 60%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 2em;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1040px) {
+  .about .container .about-box {
+    width: 55%;
+  }
+}
+
+@media (max-width: 860px) {
+  .about .container .about-box {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .about .container .about-box {
+    font-size: 14px;
+  }
 }
 
 .about .container .about-box h4 {
@@ -799,7 +844,23 @@ body.nav-hidden section {
   margin-bottom: 30px;
   font-size: 25px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.4;
+}
+
+.about .container .about-box h4 {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 320px) {
+  .about .container .about-box h4 {
+    font-size: calc(18px + 7 * ((100vw - 320px) / 850));
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .about .container .about-box h4 {
+    font-size: 25px;
+  }
 }
 
 .about .container .about-box h4 span {
@@ -807,9 +868,6 @@ body.nav-hidden section {
 }
 
 .about .container .about-box p {
-  font-size: 16px;
-  letter-spacing: 1px;
-  line-height: 2;
   color: #6f6f6f;
 }
 
@@ -828,25 +886,25 @@ body.nav-hidden section {
   width: 50%;
 }
 
-.about .container .about-box .personal-data .personal-details li {
-  line-height: 2em;
-}
-
 .about .container .about-box .personal-data .personal-details li div {
   display: inline-block;
   margin: 0 0 10px;
 }
 
+@media (max-width: 690px) {
+  .about .container .about-box .personal-data .personal-details li div {
+    display: block;
+  }
+}
+
 .about .container .about-box .personal-data .personal-details li div.data-type {
-  font-size: 16px;
   font-weight: 600;
-  color: #000;
+  color: #000000;
   min-width: 85px;
   margin-right: 10px;
 }
 
 .about .container .about-box .personal-data .personal-details li div.data-content {
-  font-size: 16px;
   color: #6f6f6f;
 }
 
@@ -860,14 +918,12 @@ body.nav-hidden section {
 
 .about .container .about-box .interests p {
   margin: 0 0 15px;
-  line-height: 2em;
-  font-size: 16px;
   font-weight: 400;
   color: #6f6f6f;
 }
 
 .about .container .about-box .interests p span {
-  color: #000;
+  color: #000000;
   font-weight: 600;
 }
 
@@ -884,14 +940,259 @@ body.nav-hidden section {
   margin: 0;
 }
 
+@media (max-width: 480px) {
+  .about .container .about-box .buttons li {
+    display: block;
+    margin: 0 0 15px !important;
+  }
+}
+
 .about .container .about-box .buttons li button {
   cursor: pointer;
   padding: 8px 30px;
   background-color: #ff4b36;
-  color: #ffffff;
+  line-height: 2em;
   border: none;
   outline: none;
-  line-height: 2em;
+  color: #ffffff;
   font-family: "Raleway";
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.about .container .about-box .buttons li button span {
+  position: relative;
+  z-index: 2;
+}
+
+.about .container .about-box .buttons li button:after {
+  display: block;
+  position: absolute;
+  content: "";
+  background-color: #000000;
+  top: 0;
+  left: -20%;
+  height: 100%;
+  width: 0;
+  -webkit-transform: skew(50deg);
+          transform: skew(50deg);
+  -webkit-transition-duration: .6s;
+          transition-duration: .6s;
+  z-index: 1;
+}
+
+.about .container .about-box .buttons li button:hover:after {
+  left: -20%;
+  width: 140%;
+}
+
+.painting .portfolio {
+  padding: 120px 0 120px;
+  background-color: #f7f7f7;
+}
+
+.painting .portfolio h3 {
+  font-family: "Raleway";
+  font-size: 35px;
+  margin: 0 0 90px;
+}
+
+.painting .portfolio h3 span {
+  color: #ff4b36;
+}
+
+.painting .portfolio .painting-categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.painting .portfolio .painting-categories .category-item {
+  width: 360px;
+  height: 288px;
+  font-family: "Raleway";
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  padding: 140px 0 60px;
+}
+
+.painting .portfolio .painting-categories .category-item:after {
+  display: block;
+  position: absolute;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.painting .portfolio .painting-categories .category-item:hover:after {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.painting .portfolio .painting-categories .category-item.acrylic {
+  background-image: url("../img/acrylic.jpg");
+}
+
+.painting .portfolio .painting-categories .category-item.illustration {
+  background-image: url("../img/illustration.jpg");
+}
+
+.painting .portfolio .painting-categories .category-item.watercolor {
+  background-image: url("../img/watercolor.jpg");
+}
+
+.painting .portfolio .painting-categories .category-item h4 {
+  display: block;
+  font-size: 22px;
+  color: #ffffff;
+  z-index: 1;
+  margin: 0;
+}
+
+.painting .portfolio .painting-categories .category-item p {
+  z-index: 1;
+}
+
+.painting .portfolio .painting-categories .category-item p a {
+  display: block;
+  color: #ff4b36;
+  font-size: 18px;
+}
+
+.painting .painting-atributes {
+  padding: 120px 0;
+}
+
+.painting .painting-atributes .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.painting .painting-atributes .container .column-inspiration {
+  width: 45%;
+}
+
+.painting .painting-atributes .container .column-inspiration h4 {
+  font-family: "Raleway";
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 20px;
+}
+
+.painting .painting-atributes .container .column-inspiration h4 {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 320px) {
+  .painting .painting-atributes .container .column-inspiration h4 {
+    font-size: calc(18px + 7 * ((100vw - 320px) / 850));
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .painting .painting-atributes .container .column-inspiration h4 {
+    font-size: 25px;
+  }
+}
+
+.painting .painting-atributes .container .column-inspiration h4 span {
+  color: #ff4b36;
+}
+
+.painting .painting-atributes .container .column-inspiration p {
+  font-size: 16px;
+  line-height: 2em;
+  letter-spacing: 1px;
+  color: #6f6f6f;
+  margin: 0;
+}
+
+.painting .painting-atributes .container .column-atributes {
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.painting .painting-atributes .container .column-atributes .atribute {
+  padding: 0 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.painting .painting-atributes .container .column-atributes .atribute .name {
+  display: block;
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.painting .painting-atributes .container .column-atributes .atribute .percent {
+  display: block;
+  color: #6f6f6f;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.painting .painting-atributes .container .column-atributes .atribute-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #000000;
+  margin: 0 0 20px;
+}
+
+.painting .painting-atributes .container .column-atributes .atribute-bar .active-bar {
+  height: 100%;
+  width: 75%;
+  background-color: #ff4b36;
 }
 /*# sourceMappingURL=style.css.map */
