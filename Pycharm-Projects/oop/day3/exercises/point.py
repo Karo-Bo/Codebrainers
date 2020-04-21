@@ -1,15 +1,3 @@
-class Vector:
-    # TODO:
-    # counter
-    # vector[0] = 12 #__setitem__
-    # hide x and y
-    # or
-    # use tuple/list instead of self.x self.y
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -47,13 +35,12 @@ class Point:
             raise IndexError("No such vector index")
 
 
-
 point_a = Point(0, 0)
 point_b = Point(1, 1)
 point_c = Point(2, 1)
-print(point_a.distance(point_b))
-print(point_c.distance(point_b))
-print(point_b == point_c)
-print(point_b + point_c)
-print(point_b - point_c)
-print(point_b[0])
+# print(point_a.distance(point_b))
+# print(point_c.distance(point_b))
+# print(point_b == point_c)
+# print(point_b + point_c)
+# print(point_b - point_c)
+# print(point_b[0])
