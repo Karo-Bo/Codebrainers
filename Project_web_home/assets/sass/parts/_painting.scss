@@ -80,8 +80,6 @@
                         display: block;
                         color: $strong-color;
                         font-size: 18px;
-                        // position: absolute;
-
                     }
                 }
             }
@@ -137,7 +135,7 @@
                     .name {
                         display: block;
                         text-transform: uppercase;
-                        color: $$light-color;
+                        color: $light-color;
                         font-size: 13px;
                         letter-spacing: 1px;
                     }
@@ -168,8 +166,6 @@
                         //     background-color: $strong-color;
                         //     width: 75%;                        
                         // }
-
-
                     }
                 }
             }
