@@ -1,0 +1,22 @@
+<!-- szablon tylko i wyłącznie dla naszego widoku index -->
+
+<!-- pozwala użyć potem zmiennej static która automatycznie pozwala odwołać się do 
+folderu static -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/main.css' %}">
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+
+</html>

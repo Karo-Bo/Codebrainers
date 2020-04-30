@@ -1,29 +1,16 @@
-<!-- szablon tylko i wyłącznie dla naszego widoku index -->
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
+<h1>{{ title }}</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-</head>
+{% if question_list %}
 
-<body>
-    <h1>{{ title }}</h1>
+{% for question in question_list %}
+<h2><a href="{% url 'polls:details' question.id %}">{{ question }}</a></h2>
+{% endfor%}
 
-    {% if question_list %}
+{% else %}
+<p>Nie mamy żadnych pytań</p>
 
-    {% for question in question_list %}
-    <h2><a href="{% url 'polls_details' question.id %}">{{ question }}</a></h2>
-    {% endfor%}
-
-    {% else %}
-    <p>Nie mamy żadnych pytań</p>
-
-    {% endif %}
-
-
-</body>
-
-</html>
+{% endif %}
+{% endblock %}

@@ -35,5 +35,8 @@ def details(request, question_id):
     {
         'title': f'Question {result.id}',
         'question': result,
+        'choices_filtered': result.choice_set.filter(choice_text__icontains='a'),
         },
     )
+
+    # icontains - case insensitive
