@@ -6,14 +6,14 @@
     <nav>
         <a href="{% url 'polls:index' %}">Strona główna</a>
     </nav>
-    <h1>{{ title }}</h1>
+    <h2>{{ title }}</h2>
 
-    <p>{{ question }}</p>
+    <p class="question">{{ question }}</p>
 
     <form method="POST" action="">
         {% csrf_token %}
         
-        <ol>
+        <ul>
             {% for choice in question.choice_set.all %}
             <!-- {# zamiast procenta w komentarzu, żeby Django nie wykrywało składni} -->
 
@@ -21,8 +21,8 @@
             <!-- {# for choice in question.choice_set.filter() <- django nie obsługuje tu nawiasów #} -->
                 <li><label><input type="radio" name="choice" value="{{ choic.id }}"> {{ choice }}</label></li>
             {% endfor %}
-        </ol>
-        <input type="submit" value="Zagłosuj">
+        </ul>
+        <input class="vote-button" type="submit" value="Zagłosuj">
     </form>
 
 {% endblock %}
