@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from polls.models import Question
+from polls.models import Question, Choice
 from django.utils import timezone
 
 # FBV - Function - Based - View
@@ -40,3 +40,31 @@ def details(request, question_id):
     )
 
     # icontains - case insensitive
+
+def vote(request, question_id):
+    # 1. widok musi sprawdzić, czy to jest żądanie POST
+    # 2. odczytać dane POST
+    # 3. sprawdzić poprawność danych POST/ walidacja pola
+    # 4. lista akcji: 
+    #   - oddanie głosu na dany wybór
+    #   (- wyświetlić komunikat o zagłosowaniu poprawnie)
+    #   - przekierować użytkownika
+    #
+    # jeżeli nie POST -> akcje
+    # jeżeli dane POST niepoprawne -> akcje
+
+    if request.method == "POST":
+        data = request.POST
+        print(data)
+
+        question = get_object_or_404(Question, id=question_id)
+        try:
+            choice_id = int(data.get('choice', 0)) # 0 jest tutaj domyślną wartością, inaczej - None
+            question.choice_set.get(id=choice_id)
+        except (ValueError, Choice.DoesNotExist):
+            # jeżeli dane POST niepoprawne -> akcje
+            pass
+        else:
+            pass # jeżeli w bloku try żaden z wyjątków nie wystąpi
+    else:
+        return redirect('https://niebezpiecznik.pl')

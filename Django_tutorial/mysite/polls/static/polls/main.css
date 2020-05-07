@@ -10,6 +10,8 @@ $extra-color: #0C485D; */
 
 body {
     background-color: #F7F7F7;
+    margin: 0;
+    padding: 0;
     /* font-family: "Montserrat"; */
 }
 
@@ -26,7 +28,7 @@ a {
 .bg-photo {
     width: calc(100vw - 560px);
     min-height: 100vh;
-    background-image: url("./assets/background.jpg");
+    background-image: url("./assets/img/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
